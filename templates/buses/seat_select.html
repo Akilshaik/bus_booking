@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Select Seats{% endblock %}
+
+{% block extra_head %}
+<style>
+  .seat-grid { display: grid; grid-template-columns: repeat(5, minmax(44px, 1fr)); gap: 10px; }
+  .seat-item { position: relative; }
+  .seat-btn { width: 100%; height: 44px; border-radius: 10px; border: 1px solid #ced4da; background: #fff; }
+  .seat-btn.selected { background: #0d6efd; color: #fff; border-color: #0d6efd; }
+  .seat-btn.unavailable { background: #e9ecef; color: #6c757d; cursor: not-allowed; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-1">Select Seats</h4>
+        <div class="text-muted small mb-3">
+          {{ trip.route.source }} → {{ trip.route.destination }} • {{ trip.journey_date }} • {{ trip.departure_time }} - {{ trip.arrival_time }}
+        </div>
+
+        {% if error %}
+          <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <div class="d-flex gap-3 small mb-3">
+          <div><span class="legend-dot" style="background:#fff;border:1px solid #ced4da;"></span>Available</div>
+          <div><span class="legend-dot" style="background:#0d6efd;"></span>Selected</div>
+          <div><span class="legend-dot" style="background:#e9ecef;"></span>Booked/Locked</div>
+        </div>
+
+        <form method="post" id="seatForm">
+          {% csrf_token %}
+
+          <input type="hidden" id="baseFare" value="{{ trip.base_fare }}">
+          <input type="hidden" name="trip_id" value="{{ trip.id }}">
+
+          <div class="mb-3">
+            <h6 class="mb-2">Seats</h6>
+            <div class="seat-grid">
+              {% for seat in seats %}
+                <div class="seat-item">
+                  {% if seat.id in unavailable_ids %}
+                    <button type="button" class="seat-btn unavailable" disabled title="Unavailable">{{ seat.seat_number }}</button>
+                  {% else %}
+                    <input class="d-none seat-check" type="checkbox" name="seats" value="{{ seat.id }}"
+                           id="seat{{ seat.id }}" data-seat-number="{{ seat.seat_number }}">
+                    <label class="seat-btn d-flex align-items-center justify-content-center"
+                           for="seat{{ seat.id }}">{{ seat.seat_number }}</label>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="text-muted small mt-2">Tip: select 1 or more seats and continue.</div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center border-top pt-3">
+            <div>
+              <div class="small text-muted">Selected Seats:</div>
+              <div class="fw-semibold" id="selectedSeatsText">None</div>
+            </div>
+
+            <div class="text-end">
+              <div class="small text-muted">Total Fare</div>
+              <div class="fs-5 fw-bold">₹<span id="totalFare">0</span></div>
+              <button class="btn btn-primary mt-2" type="submit">Continue</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 mt-3 mt-lg-0">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="mb-2">Trip Details</h6>
+        <div class="small">
+          <div><b>Bus:</b> {{ trip.bus.operator_name }}</div>
+          <div><b>Type:</b> {{ trip.bus.get_bus_type_display }}</div>
+          <div><b>Date:</b> {{ trip.journey_date }}</div>
+          <div><b>Time:</b> {{ trip.departure_time }} - {{ trip.arrival_time }}</div>
+          <div class="mt-2"><b>Base Fare/Seat:</b> ₹{{ trip.base_fare }}</div>
+          <div class="text-muted mt-2">Seats are held temporarily during checkout.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/seat.js' %}"></script>
+{% endblock %}

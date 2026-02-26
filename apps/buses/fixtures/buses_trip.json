@@ -1,0 +1,54 @@
+[
+  {
+    "model": "buses.trip",
+    "pk": 1,
+    "fields": {
+      "bus": 1,
+      "route": 1,
+      "journey_date": "2026-03-05",
+      "departure_time": "08:00:00",
+      "arrival_time": "12:00:00",
+      "base_fare": "450.00",
+      "active": true
+    }
+  },
+  {
+    "model": "buses.trip",
+    "pk": 2,
+    "fields": {
+      "bus": 2,
+      "route": 1,
+      "journey_date": "2026-03-05",
+      "departure_time": "09:30:00",
+      "arrival_time": "13:30:00",
+      "base_fare": "350.00",
+      "active": true
+    }
+  },
+  {
+    "model": "buses.trip",
+    "pk": 3,
+    "fields": {
+      "bus": 1,
+      "route": 3,
+      "journey_date": "2026-03-06",
+      "departure_time": "07:15:00",
+      "arrival_time": "11:30:00",
+      "base_fare": "500.00",
+      "active": true
+    }
+  },
+  {
+    "model": "buses.trip",
+    "pk": 4,
+    "fields": {
+      "bus": 2,
+      "route": 2,
+      "journey_date": "2026-03-07",
+      "departure_time": "18:00:00",
+      "arrival_time": "22:30:00",
+      "base_fare": "380.00",
+      "active": true
+    }
+  }
+]

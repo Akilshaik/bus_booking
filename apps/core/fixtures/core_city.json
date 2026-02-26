@@ -1,0 +1,7 @@
+[
+  { "model": "core.city", "pk": 1, "fields": { "name": "Mumbai", "state": "Maharashtra" } },
+  { "model": "core.city", "pk": 2, "fields": { "name": "Pune", "state": "Maharashtra" } },
+  { "model": "core.city", "pk": 3, "fields": { "name": "Nashik", "state": "Maharashtra" } },
+  { "model": "core.city", "pk": 4, "fields": { "name": "Nagpur", "state": "Maharashtra" } },
+  { "model": "core.city", "pk": 5, "fields": { "name": "Aurangabad", "state": "Maharashtra" } }
+]

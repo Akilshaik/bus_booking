@@ -1,0 +1,962 @@
+[
+  {
+    "model": "buses.seat",
+    "pk": 1,
+    "fields": {
+      "bus": 1,
+      "seat_number": "A1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 2,
+    "fields": {
+      "bus": 1,
+      "seat_number": "A2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 3,
+    "fields": {
+      "bus": 1,
+      "seat_number": "A3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 4,
+    "fields": {
+      "bus": 1,
+      "seat_number": "A4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 5,
+    "fields": {
+      "bus": 1,
+      "seat_number": "B1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 6,
+    "fields": {
+      "bus": 1,
+      "seat_number": "B2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 7,
+    "fields": {
+      "bus": 1,
+      "seat_number": "B3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 8,
+    "fields": {
+      "bus": 1,
+      "seat_number": "B4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 9,
+    "fields": {
+      "bus": 1,
+      "seat_number": "C1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 10,
+    "fields": {
+      "bus": 1,
+      "seat_number": "C2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 11,
+    "fields": {
+      "bus": 1,
+      "seat_number": "C3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 12,
+    "fields": {
+      "bus": 1,
+      "seat_number": "C4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 13,
+    "fields": {
+      "bus": 1,
+      "seat_number": "D1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 14,
+    "fields": {
+      "bus": 1,
+      "seat_number": "D2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 15,
+    "fields": {
+      "bus": 1,
+      "seat_number": "D3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 16,
+    "fields": {
+      "bus": 1,
+      "seat_number": "D4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 17,
+    "fields": {
+      "bus": 1,
+      "seat_number": "E1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 18,
+    "fields": {
+      "bus": 1,
+      "seat_number": "E2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 19,
+    "fields": {
+      "bus": 1,
+      "seat_number": "E3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 20,
+    "fields": {
+      "bus": 1,
+      "seat_number": "E4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 21,
+    "fields": {
+      "bus": 1,
+      "seat_number": "F1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 22,
+    "fields": {
+      "bus": 1,
+      "seat_number": "F2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 23,
+    "fields": {
+      "bus": 1,
+      "seat_number": "F3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 24,
+    "fields": {
+      "bus": 1,
+      "seat_number": "F4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 25,
+    "fields": {
+      "bus": 1,
+      "seat_number": "G1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 26,
+    "fields": {
+      "bus": 1,
+      "seat_number": "G2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 27,
+    "fields": {
+      "bus": 1,
+      "seat_number": "G3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 28,
+    "fields": {
+      "bus": 1,
+      "seat_number": "G4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 29,
+    "fields": {
+      "bus": 1,
+      "seat_number": "H1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 30,
+    "fields": {
+      "bus": 1,
+      "seat_number": "H2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 31,
+    "fields": {
+      "bus": 1,
+      "seat_number": "H3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 32,
+    "fields": {
+      "bus": 1,
+      "seat_number": "H4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 33,
+    "fields": {
+      "bus": 1,
+      "seat_number": "I1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 34,
+    "fields": {
+      "bus": 1,
+      "seat_number": "I2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 35,
+    "fields": {
+      "bus": 1,
+      "seat_number": "I3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 36,
+    "fields": {
+      "bus": 1,
+      "seat_number": "I4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 37,
+    "fields": {
+      "bus": 1,
+      "seat_number": "J1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 38,
+    "fields": {
+      "bus": 1,
+      "seat_number": "J2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 39,
+    "fields": {
+      "bus": 1,
+      "seat_number": "J3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 40,
+    "fields": {
+      "bus": 1,
+      "seat_number": "J4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1001,
+    "fields": {
+      "bus": 2,
+      "seat_number": "A1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1002,
+    "fields": {
+      "bus": 2,
+      "seat_number": "A2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1003,
+    "fields": {
+      "bus": 2,
+      "seat_number": "A3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1004,
+    "fields": {
+      "bus": 2,
+      "seat_number": "A4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 1,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1005,
+    "fields": {
+      "bus": 2,
+      "seat_number": "B1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1006,
+    "fields": {
+      "bus": 2,
+      "seat_number": "B2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1007,
+    "fields": {
+      "bus": 2,
+      "seat_number": "B3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1008,
+    "fields": {
+      "bus": 2,
+      "seat_number": "B4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 2,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1009,
+    "fields": {
+      "bus": 2,
+      "seat_number": "C1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1010,
+    "fields": {
+      "bus": 2,
+      "seat_number": "C2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1011,
+    "fields": {
+      "bus": 2,
+      "seat_number": "C3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1012,
+    "fields": {
+      "bus": 2,
+      "seat_number": "C4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 3,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1013,
+    "fields": {
+      "bus": 2,
+      "seat_number": "D1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1014,
+    "fields": {
+      "bus": 2,
+      "seat_number": "D2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1015,
+    "fields": {
+      "bus": 2,
+      "seat_number": "D3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1016,
+    "fields": {
+      "bus": 2,
+      "seat_number": "D4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 4,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1017,
+    "fields": {
+      "bus": 2,
+      "seat_number": "E1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1018,
+    "fields": {
+      "bus": 2,
+      "seat_number": "E2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1019,
+    "fields": {
+      "bus": 2,
+      "seat_number": "E3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1020,
+    "fields": {
+      "bus": 2,
+      "seat_number": "E4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 5,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1021,
+    "fields": {
+      "bus": 2,
+      "seat_number": "F1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1022,
+    "fields": {
+      "bus": 2,
+      "seat_number": "F2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1023,
+    "fields": {
+      "bus": 2,
+      "seat_number": "F3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1024,
+    "fields": {
+      "bus": 2,
+      "seat_number": "F4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 6,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1025,
+    "fields": {
+      "bus": 2,
+      "seat_number": "G1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1026,
+    "fields": {
+      "bus": 2,
+      "seat_number": "G2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1027,
+    "fields": {
+      "bus": 2,
+      "seat_number": "G3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1028,
+    "fields": {
+      "bus": 2,
+      "seat_number": "G4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 7,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1029,
+    "fields": {
+      "bus": 2,
+      "seat_number": "H1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1030,
+    "fields": {
+      "bus": 2,
+      "seat_number": "H2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1031,
+    "fields": {
+      "bus": 2,
+      "seat_number": "H3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1032,
+    "fields": {
+      "bus": 2,
+      "seat_number": "H4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 8,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1033,
+    "fields": {
+      "bus": 2,
+      "seat_number": "I1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1034,
+    "fields": {
+      "bus": 2,
+      "seat_number": "I2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1035,
+    "fields": {
+      "bus": 2,
+      "seat_number": "I3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1036,
+    "fields": {
+      "bus": 2,
+      "seat_number": "I4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 9,
+      "col": 4
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1037,
+    "fields": {
+      "bus": 2,
+      "seat_number": "J1",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 1
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1038,
+    "fields": {
+      "bus": 2,
+      "seat_number": "J2",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 2
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1039,
+    "fields": {
+      "bus": 2,
+      "seat_number": "J3",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 3
+    }
+  },
+  {
+    "model": "buses.seat",
+    "pk": 1040,
+    "fields": {
+      "bus": 2,
+      "seat_number": "J4",
+      "seat_type": "SEATER",
+      "deck": "LOWER",
+      "row": 10,
+      "col": 4
+    }
+  }
+]

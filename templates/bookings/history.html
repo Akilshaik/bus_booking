@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<h4 class="mb-3">My Bookings</h4>
+
+{% if bookings %}
+  <div class="row g-3">
+    {% for b in bookings %}
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body d-flex flex-column flex-md-row justify-content-between gap-2">
+            <div>
+              <div class="fw-bold">{{ b.trip.route.source }} → {{ b.trip.route.destination }}</div>
+              <div class="text-muted small">
+                {{ b.trip.journey_date }} • {{ b.trip.departure_time }} - {{ b.trip.arrival_time }} • PNR: <b>{{ b.pnr }}</b>
+              </div>
+              <div class="mt-1">
+                <span class="badge {% if b.status == 'CONFIRMED' %}text-bg-success{% elif b.status == 'CANCELLED' %}text-bg-danger{% else %}text-bg-warning{% endif %}">
+                  {{ b.status }}
+                </span>
+                <span class="ms-2 fw-semibold">₹{{ b.total_fare }}</span>
+              </div>
+            </div>
+
+            <div class="text-md-end">
+              <a class="btn btn-outline-primary btn-sm" href="{% url 'ticket_pdf' b.id %}">Ticket</a>
+              {% if b.status == "CONFIRMED" %}
+                <a class="btn btn-outline-danger btn-sm" href="{% url 'cancel_booking' b.id %}">Cancel</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="alert alert-info">No bookings yet. Try searching for a trip.</div>
+{% endif %}
+{% endblock %}

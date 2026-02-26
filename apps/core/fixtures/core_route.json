@@ -1,0 +1,13 @@
+[
+  { "model": "core.route", "pk": 1, "fields": { "source": 1, "destination": 2, "distance_km": 150 } },
+  { "model": "core.route", "pk": 2, "fields": { "source": 2, "destination": 1, "distance_km": 150 } },
+
+  { "model": "core.route", "pk": 3, "fields": { "source": 1, "destination": 3, "distance_km": 166 } },
+  { "model": "core.route", "pk": 4, "fields": { "source": 3, "destination": 1, "distance_km": 166 } },
+
+  { "model": "core.route", "pk": 5, "fields": { "source": 2, "destination": 4, "distance_km": 710 } },
+  { "model": "core.route", "pk": 6, "fields": { "source": 4, "destination": 2, "distance_km": 710 } },
+
+  { "model": "core.route", "pk": 7, "fields": { "source": 1, "destination": 5, "distance_km": 330 } },
+  { "model": "core.route", "pk": 8, "fields": { "source": 5, "destination": 1, "distance_km": 330 } }
+]

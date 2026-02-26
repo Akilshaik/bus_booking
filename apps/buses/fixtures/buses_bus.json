@@ -1,0 +1,22 @@
+[
+  {
+    "model": "buses.bus",
+    "pk": 1,
+    "fields": {
+      "operator_name": "Sai Travels",
+      "bus_number": "MH12-SAI-1010",
+      "bus_type": "AC_SEATER",
+      "total_seats": 40
+    }
+  },
+  {
+    "model": "buses.bus",
+    "pk": 2,
+    "fields": {
+      "operator_name": "Shivneri Express",
+      "bus_number": "MH14-SHV-2020",
+      "bus_type": "NONAC_SEATER",
+      "total_seats": 40
+    }
+  }
+]

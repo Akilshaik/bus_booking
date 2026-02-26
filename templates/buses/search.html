@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Search Buses{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-3">Search Buses</h4>
+
+        <form method="get" action="{% url 'trips_list' %}" class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label">From</label>
+            <select class="form-select" name="source" required>
+              <option value="">Select source</option>
+              {% for c in cities %}
+                <option value="{{ c.id }}">{{ c.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">To</label>
+            <select class="form-select" name="destination" required>
+              <option value="">Select destination</option>
+              {% for c in cities %}
+                <option value="{{ c.id }}">{{ c.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" name="date" required>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-primary w-100">Search</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="row g-3">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-1">Passenger Details</h4>
+        <div class="text-muted small mb-3">
+          Complete passenger info to confirm booking.
+          {% if lock_expires_in %}<span class="ms-2 badge bg-warning text-dark">Lock expires in {{ lock_expires_in }}</span>{% endif %}
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+
+          {% for seat in locked_seats %}
+            <div class="border rounded p-3 mb-3">
+              <div class="fw-semibold mb-2">Seat: {{ seat.seat_number }}</div>
+              <div class="row g-2">
+                <div class="col-md-5">
+                  <label class="form-label">Passenger Name</label>
+                  <input class="form-control" name="name_{{ seat.id }}" required>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Age</label>
+                  <input class="form-control" name="age_{{ seat.id }}" type="number" min="1" max="120" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Gender</label>
+                  <select class="form-select" name="gender_{{ seat.id }}" required>
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          {% empty %}
+            <div class="alert alert-info">No seats locked. Please go back and select seats.</div>
+          {% endfor %}
+
+          <button class="btn btn-primary w-100" {% if not locked_seats %}disabled{% endif %}>
+            Confirm Booking
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="mb-2">Summary</h6>
+        <div class="small">
+          <div><b>Route:</b> {{ trip.route.source }} → {{ trip.route.destination }}</div>
+          <div><b>Date:</b> {{ trip.journey_date }}</div>
+          <div><b>Time:</b> {{ trip.departure_time }} - {{ trip.arrival_time }}</div>
+          <div class="mt-2"><b>Seats:</b>
+            {% for seat in locked_seats %}
+              <span class="badge text-bg-secondary">{{ seat.seat_number }}</span>
+            {% endfor %}
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <span class="fw-semibold">Total</span>
+            <span class="fw-bold">₹{{ total_fare }}</span>
+          </div>
+        </div>
+
+        <div class="text-muted small mt-3">
+          Payment integration can be added after MVP (Razorpay etc.).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
