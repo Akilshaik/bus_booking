@@ -2,31 +2,108 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title>BusBooking E-Ticket</title>
   <style>
-    body { font-family: Arial, sans-serif; font-size: 12px; color: #111; }
-    .wrap { width: 100%; border: 1px solid #ddd; padding: 16px; }
-    .header { display: flex; justify-content: space-between; align-items: baseline; }
-    .title { font-size: 18px; font-weight: bold; }
-    .pnr { font-size: 14px; font-weight: bold; }
-    .box { margin-top: 12px; border: 1px solid #eee; padding: 10px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-    th, td { border: 1px solid #eee; padding: 8px; text-align: left; }
-    th { background: #f5f5f5; }
-    .muted { color: #666; }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 750px;
+      margin: 20px auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .pnr {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .user-info {
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+    .box {
+      margin-top: 12px;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      border: 1px solid #eee;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f5f5f5;
+    }
+    .muted {
+      color: #666;
+      font-size: 11px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 12px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    @media print {
+      .btn { display: none; } /* Hide button when printing */
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="wrap" id="ticket">
     <div class="header">
-      <div class="title">BusBooking E‑Ticket</div>
+      <div class="title">BusBooking E-Ticket</div>
       <div class="pnr">PNR: {{ booking.pnr }}</div>
+    </div>
+
+    <div class="user-info">
+      <b>Passenger Account Info</b><br>
+      <b>Name:</b> {{ booking.user}}<br>
+      <b>Email:</b> {{ booking.user.email }}<br>
+      <b>Phone:</b> {{ booking.user.phone_number|default:"—" }}
     </div>
 
     <div class="box">
       <div><b>Route:</b> {{ booking.trip.route.source }} → {{ booking.trip.route.destination }}</div>
       <div><b>Date:</b> {{ booking.trip.journey_date }}</div>
-      <div><b>Time:</b> {{ booking.trip.departure_time }} - {{ booking.trip.arrival_time }}</div>
+      <div><b>Time:</b> {{ booking.trip.departure_time }} – {{ booking.trip.arrival_time }}</div>
       <div><b>Bus:</b> {{ booking.trip.bus.operator_name }} ({{ booking.trip.bus.get_bus_type_display }})</div>
       <div><b>Status:</b> {{ booking.status }}</div>
       <div><b>Total Fare:</b> ₹{{ booking.total_fare }}</div>
@@ -47,25 +124,20 @@
         </thead>
         <tbody>
           {% for ps in booking.passengers.all %}
-            <tr>
-              <td>{{ forloop.counter }}</td>
-              <td>{{ ps.name }}</td>
-              <td>{{ ps.age }}</td>
-              <td>{{ ps.gender }}</td>
-              <td>
-                {# If you map passenger->seat differently, adjust here #}
-                {% if booking.seats.all|length >= forloop.counter %}
-                  {{ booking.seats.all|slice:forloop.counter|last.seat.seat_number }}
-                {% else %}
-                  —
-                {% endif %}
-              </td>
-            </tr>
-          {% endfor %}
+<tr>
+  <td>{{ forloop.counter }}</td>
+  <td>{{ ps.name }}</td>
+  <td>{{ ps.age }}</td>
+  <td>{{ ps.gender }}</td>
+  <td>{{ ps.seat.seat_number }}</td>
+</tr>
+{% endfor %}
         </tbody>
       </table>
       <p class="muted">Please carry a valid ID proof while traveling.</p>
     </div>
+
+    <button class="btn" onclick="window.print()">🖨️ Download / Print Ticket</button>
   </div>
 </body>
 </html>

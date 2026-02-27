@@ -1,4 +1,3 @@
-# bookings/views.py
 from datetime import timedelta
 
 from django.contrib import messages
@@ -170,7 +169,7 @@ def checkout_view(request, trip_id):
 
                     Passenger.objects.create(
                         booking=booking,
-                        seat=seat,               # ✅ requires seat in Passenger model
+                        seat=seat,               
                         name=name,
                         age=int(age),
                         gender=gender

@@ -1,4 +1,3 @@
-# bookings/services.py
 from django.utils import timezone
 from .models import SeatLock, BookingSeat
 
