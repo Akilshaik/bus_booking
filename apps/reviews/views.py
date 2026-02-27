@@ -82,3 +82,4 @@ def add_review_view(request, bus_id):
         return redirect("bus_reviews", bus_id=bus.id)
 
     return render(request, "reviews/add_review.html", {"bus": bus})
+ 
