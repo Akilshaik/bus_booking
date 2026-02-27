@@ -1,0 +1,12 @@
+<h1>All Passengers Report</h1>
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr><th>ID</th><th>Name</th><th>Gender</th><th>Booking</th></tr>
+  {% for p in passengers %}
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.gender }}</td>
+      <td>{{ p.booking }}</td>
+    </tr>
+  {% endfor %}
+</table>

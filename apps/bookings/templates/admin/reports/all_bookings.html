@@ -1,0 +1,13 @@
+<h1>All Bookings Report</h1>
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr><th>ID</th><th>User</th><th>Trip</th><th>Amount</th><th>Date</th></tr>
+  {% for booking in bookings %}
+    <tr>
+      <td>{{ booking.id }}</td>
+      <td>{{ booking.user.username }}</td>
+      <td>{{ booking.trip }}</td>
+      <td>{{ booking.amount }}</td>
+      <td>{{ booking.created_at }}</td>
+    </tr>
+  {% endfor %}
+</table>

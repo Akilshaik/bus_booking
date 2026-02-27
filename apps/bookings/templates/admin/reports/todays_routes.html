@@ -1,0 +1,12 @@
+<h1>Today's Bus Routes - {{ today }}</h1>
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr><th>ID</th><th>Source</th><th>Destination</th><th>Bus</th></tr>
+  {% for route in routes %}
+    <tr>
+      <td>{{ route.id }}</td>
+      <td>{{ route.source }}</td>
+      <td>{{ route.destination }}</td>
+      <td>{{ route.bus }}</td>
+    </tr>
+  {% endfor %}
+</table>

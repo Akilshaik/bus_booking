@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Booking PDF</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Booking Summary</h1>
+  <p><strong>User:</strong> {{ booking.user.username }}</p>
+  <p><strong>Trip:</strong> {{ booking.trip }}</p>
+  <p><strong>Amount:</strong> {{ booking.total_price }}</p>
+  <p><strong>Created At:</strong> {{ booking.created_at }}</p>
+</body>
+</html>
