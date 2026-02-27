@@ -4,6 +4,7 @@ from xhtml2pdf import pisa
 from io import BytesIO
 from datetime import date
 from .models import Booking, Passenger
+from apps.core.models import Route
 
 from django.utils import timezone
 
@@ -36,7 +37,7 @@ def all_passengers_report(request):
         "today_passengers"
     )
 
-# def todays_routes_report(request):
-#     today = date.today()
-#     routes = Route.objects.filter(trip__date=today)  # adjust if your trip model differs
-#     return generate_pdf("admin/reports/todays_routes.html", {"routes": routes, "today": today}, "todays_routes")
+def todays_routes_report(request):
+    today = date.today()
+    routes = Route.objects.all()  # adjust if your trip model differs
+    return generate_pdf("admin/reports/todays_routes.html", {"routes": routes, "today": today}, "todays_routes")

@@ -2,36 +2,47 @@
 {% block title %}Add Review{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-lg-6">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h4 class="mb-3">Rate & Review</h4>
+<div class="container my-4" style="max-width: 650px;">
 
-        <form method="post">
-          {% csrf_token %}
-          <div class="mb-2">
-            <label class="form-label">Rating</label>
-            <select class="form-select" name="rating" required>
-              <option value="">Select</option>
-              <option value="5">5 - Excellent</option>
-              <option value="4">4 - Good</option>
-              <option value="3">3 - Average</option>
-              <option value="2">2 - Poor</option>
-              <option value="1">1 - Bad</option>
-            </select>
-          </div>
+  <a href="{% url 'bus_reviews' bus.id %}" class="btn btn-link px-0 mb-2">← Back to Reviews</a>
 
-          <div class="mb-3">
-            <label class="form-label">Review</label>
-            <textarea class="form-control" name="comment" rows="4" placeholder="Write your experience..."></textarea>
-          </div>
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <strong>Rate: {{ bus.operator_name }} ({{ bus.bus_number }})</strong>
+    </div>
 
-          <button class="btn btn-primary w-100">Submit</button>
-        </form>
+    <div class="card-body">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
 
-      </div>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label">Rating</label>
+          <select class="form-select" name="rating" required>
+            <option value="">Select rating</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Good</option>
+            <option value="3">3 - Average</option>
+            <option value="2">2 - Poor</option>
+            <option value="1">1 - Bad</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Comment (optional)</label>
+          <textarea class="form-control" name="comment" rows="4"
+                    placeholder="Write your experience..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+      </form>
     </div>
   </div>
+
 </div>
 {% endblock %}

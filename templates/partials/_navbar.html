@@ -11,6 +11,8 @@
         <li class="nav-item"><a class="nav-link" href="{% url 'search' %}">Search</a></li>
         {% if user.is_authenticated %}
           <li class="nav-item"><a class="nav-link" href="{% url 'booking_history' %}">My Bookings</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'bus_select' %}">rating</a></li>
+
         {% endif %}
       </ul>
 

@@ -3,10 +3,11 @@
   <tr><th>ID</th><th>Source</th><th>Destination</th><th>Bus</th></tr>
   {% for route in routes %}
     <tr>
-      <td>{{ route.id }}</td>
+      <!-- <td>{{ route.id }}</td> -->
       <td>{{ route.source }}</td>
       <td>{{ route.destination }}</td>
-      <td>{{ route.bus }}</td>
+      <td>{{ route.distance_km}}</td>
+      <!-- <td>{{ route.bus }}</td> -->
     </tr>
   {% endfor %}
 </table>

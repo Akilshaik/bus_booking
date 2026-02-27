@@ -40,10 +40,10 @@ class BookingAdmin(admin.ModelAdmin):
                 "reports/all-passengers/",
                 self.admin_site.admin_view(reports_pdf_views.all_passengers_report),
             ),
-            # path(
-            #     "reports/todays-routes/",
-            #     self.admin_site.admin_view(reports_pdf_views.todays_routes_report),
-            # ),
+            path(
+                "reports/todays-routes/",
+                self.admin_site.admin_view(reports_pdf_views.todays_routes_report),
+            ),
         ]
         return custom_urls + urls
 

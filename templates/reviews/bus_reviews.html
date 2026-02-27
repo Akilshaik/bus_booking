@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Bus Reviews{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+    <div>
+      <a href="{% url 'bus_select' %}" class="btn btn-link px-0">← Back to Bus List</a>
+      <h2 class="mb-1">{{ bus.operator_name }} ({{ bus.bus_number }})</h2>
+      <div class="text-muted">
+        Type: <strong>{{ bus.get_bus_type_display }}</strong> · Seats: <strong>{{ bus.total_seats }}</strong>
+      </div>
+    </div>
+
+    <div class="text-end">
+      <div class="h5 mb-0">{{ average_rating }} / 5</div>
+      <div class="text-muted small">{{ total_reviews }} review(s)</div>
+      <a href="{% url 'add_review' bus.id %}" class="btn btn-primary btn-sm mt-2">Rate this Bus</a>
+    </div>
+  </div>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-white"><strong>Reviews</strong></div>
+    <div class="card-body">
+
+      {% if reviews %}
+        <div class="list-group list-group-flush">
+          {% for review in reviews %}
+            <div class="list-group-item py-3">
+              <div class="d-flex justify-content-between">
+                <div class="fw-semibold">
+                  {{ review.user.get_full_name|default:review.user.username|default:"User" }}
+                </div>
+                <div class="text-muted small">{{ review.created_at|date:"d M Y, h:i A" }}</div>
+              </div>
+
+              <div class="text-warning mb-1">
+                {% with r=review.rating %}
+                  {% if r >= 1 %}★{% else %}☆{% endif %}
+                  {% if r >= 2 %}★{% else %}☆{% endif %}
+                  {% if r >= 3 %}★{% else %}☆{% endif %}
+                  {% if r >= 4 %}★{% else %}☆{% endif %}
+                  {% if r >= 5 %}★{% else %}☆{% endif %}
+                {% endwith %}
+                <span class="text-muted ms-2">{{ review.rating }}/5</span>
+              </div>
+
+              {% if review.comment %}
+                <div>{{ review.comment }}</div>
+              {% else %}
+                <div class="text-muted fst-italic">No comment.</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="text-center text-muted py-4">
+          No reviews yet. Be the first to rate this bus!
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
