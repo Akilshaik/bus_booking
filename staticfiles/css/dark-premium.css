@@ -1,0 +1,217 @@
+/* =========================
+   Dark Premium Theme
+   ========================= */
+
+:root{
+  /* Background base */
+  --bg-0:#070A12;
+  --bg-1:#0B1020;
+  --bg-2:#0F172A;
+
+  /* Text */
+  --text:#E5E7EB;
+  --muted:rgba(229,231,235,.68);
+
+  /* Accents */
+  --a1:#3B82F6; /* blue */
+  --a2:#8B5CF6; /* violet */
+  --a3:#22C55E; /* green */
+  --a4:#06B6D4; /* cyan */
+
+  /* Surfaces */
+  --surface:rgba(255,255,255,.06);
+  --surface-2:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+
+  /* Effects */
+  --shadow: 0 18px 45px rgba(0,0,0,.40);
+  --radius: 16px;
+}
+
+/* Global background + typography */
+html, body{ height:100%; }
+
+body{
+  color: var(--text);
+  background:
+    radial-gradient(1100px 700px at 12% 10%, rgba(59,130,246,.22), transparent 60%),
+    radial-gradient(900px 600px at 92% 18%, rgba(139,92,246,.20), transparent 55%),
+    radial-gradient(1000px 650px at 60% 95%, rgba(34,197,94,.12), transparent 60%),
+    radial-gradient(700px 420px at 45% 30%, rgba(6,182,212,.10), transparent 55%),
+    linear-gradient(135deg, var(--bg-0) 0%, var(--bg-2) 45%, var(--bg-1) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: subtle "grain" overlay for premium feel */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity: .08;
+  mix-blend-mode: overlay;
+}
+
+/* Make content appear above the overlay */
+main, .container, .container-fluid, .navbar, .footer{
+  position: relative;
+  z-index: 1;
+}
+
+/* Links */
+a{ color: #93C5FD; text-decoration: none; }
+a:hover{ color: #BFDBFE; text-decoration: underline; }
+
+/* Muted text */
+.text-muted{ color: var(--muted) !important; }
+
+/* =========================
+   Bootstrap “Glass” surfaces
+   ========================= */
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card-header{
+  background: rgba(255,255,255,.04) !important;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Lists */
+.list-group-item{
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.10);
+  color: var(--text);
+}
+
+/* Tables */
+.table{
+  color: var(--text);
+}
+.table thead th{
+  color: rgba(229,231,235,.9);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.table td, .table th{
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+/* Inputs */
+.form-control, .form-select, textarea{
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  color: var(--text) !important;
+  border-radius: 12px;
+}
+.form-control::placeholder{ color: rgba(229,231,235,.55); }
+.form-control:focus, .form-select:focus{
+  border-color: rgba(59,130,246,.55) !important;
+  box-shadow: 0 0 0 .25rem rgba(59,130,246,.18) !important;
+}
+
+/* Buttons */
+.btn-primary{
+  border: none;
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  box-shadow: 0 10px 25px rgba(59,130,246,.18);
+  border-radius: 12px;
+}
+.btn-primary:hover{ filter: brightness(1.06); }
+.btn-outline-primary{
+  border-color: rgba(147,197,253,.55);
+  color: #BFDBFE;
+}
+.btn-outline-primary:hover{
+  background: rgba(59,130,246,.14);
+  border-color: rgba(147,197,253,.85);
+}
+
+/* Alerts */
+.alert{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+}
+
+/* Navbar (optional) */
+.navbar{
+  background: rgba(0,0,0,.18) !important;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Scrollbar (optional, looks premium) */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.22) rgba(255,255,255,.06);
+}
+*::-webkit-scrollbar{ width: 10px; }
+*::-webkit-scrollbar-track{ background: rgba(255,255,255,.06); }
+*::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.18);
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,.06);
+}
+*::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,.26); }
+
+
+:root{
+  --bs-body-bg: #0b1020;
+  --bs-body-color: #e5e7eb;
+  --bs-secondary-color: rgba(229,231,235,.68);
+  --bs-tertiary-color: rgba(229,231,235,.55);
+  --bs-border-color: rgba(255,255,255,.12);
+  --bs-link-color: #93c5fd;
+  --bs-link-hover-color: #bfdbfe;
+}
+
+/* =========================
+   SELECT DROPDOWN (FORM-SELECT) FIX
+   ========================= */
+
+/* Make browser render native controls in dark mode */
+:root { color-scheme: dark; }
+
+/* Select box itself */
+.form-select, select {
+  background-color: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* Options inside the opened dropdown (works in Chrome/Edge/Firefox) */
+select option {
+  background-color: #0f172a !important;   /* dark slate */
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* Placeholder option (first option) */
+select option[value=""] {
+  color: rgba(229,231,235,.65) !important;
+}
+
+/* Date input + calendar icon visibility */
+input[type="date"].form-control{
+  background-color: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* Chrome/Edge calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+  opacity: .85;
+  cursor: pointer;
+}
